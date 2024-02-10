@@ -31,6 +31,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Welcome();
+    return Nav();
   }
 }

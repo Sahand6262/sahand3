@@ -2,6 +2,7 @@ import 'package:complate/Customer/Send.dart';
 import 'package:complate/Customer/Tracking.dart';
 import 'package:flutter/material.dart';
 import 'package:complate/Requirments/Requirments.dart';
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -104,41 +105,33 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Send()),
-                      );
-                    },
-                    child: Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                      width: 170,
-                      decoration: BoxDecoration(
-                          color: blue, borderRadius: BorderRadius.circular(12)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            child: Image.asset(
-                              'assets/send.png',
-                              height: 100,
-                              width: 100,
-                            ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    width: 160,
+                    decoration: BoxDecoration(
+                        color: blue, borderRadius: BorderRadius.circular(12)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          child: Image.asset(
+                            'assets/send.png',
+                            height: 100,
+                            width: 100,
                           ),
-                          Container(
-                            child: Text(
-                              'Send a \n Package',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: bold,
-                                  color: Colors.white),
-                            ),
+                        ),
+                        Container(
+                          child: Text(
+                            'Send a \n Package',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontFamily: bold,
+                                color: Colors.white),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   GestureDetector(
@@ -149,7 +142,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     },
                     child: Container(
-                      width: 170,
+                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      width: 160,
                       padding:
                           EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                       decoration: BoxDecoration(
